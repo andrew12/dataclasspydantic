@@ -1,9 +1,9 @@
-name: Python package
+name: CI
 
 on: [push]
 
 jobs:
-  build:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -16,10 +16,6 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pydantic
-      - name: Test
-        run: |
-          python test.py
+      - run: python -m pip install --upgrade pip
+      - run: pip install pydantic
+      - run: python test.py
