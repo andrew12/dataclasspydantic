@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-from typing import Literal
-
 from pydantic import BaseModel
 from pydantic.dataclasses import dataclass
+from pydantic.typing import Literal
 
 
 @dataclass
