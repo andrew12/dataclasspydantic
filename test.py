@@ -5,12 +5,10 @@ from typing import Literal
 
 from pydantic import BaseModel
 
-Sum = Literal[1, 2]
-
 
 @dataclass
 class Base:
-    literal: Sum
+    literal: Literal[1, 2]
 
 
 class What(BaseModel):
